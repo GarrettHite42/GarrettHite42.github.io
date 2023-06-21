@@ -41,12 +41,12 @@ namespace StripeService
 
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseRouting();
-            app.UseCors();
-            app.UseCors(builder => builder.WithOrigins()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-				// .SetIsOriginAllowed(origin => true)
-				.AllowAnyOrigin());
+            // app.UseCors();
+            // app.UseCors(builder => builder.WithOrigins()
+                // .AllowAnyMethod()
+                // .AllowAnyHeader()
+				// // .SetIsOriginAllowed(origin => true)
+				// .AllowAnyOrigin());
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
