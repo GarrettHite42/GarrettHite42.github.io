@@ -19,7 +19,7 @@ namespace StripeService
         public static void Main(string[] args)
         {
             WebHost.CreateDefaultBuilder(args)
-            .UseUrls("http://localhost:4242") //http://stripetest.dmns.org:4242/
+            .UseUrls("https://GarrettHite42.github.io/") //http://stripetest.dmns.org:4242/
             .UseWebRoot("public")
             .UseStartup<Startup>()
             .Build()
@@ -42,7 +42,7 @@ namespace StripeService
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseRouting();
             app.UseCors();
-            app.UseCors(builder => builder.WithOrigins()
+            app.UseCors(builder => builder.WithOrigins(“http://127.0.0.1:5500”)
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowAnyOrigin());
