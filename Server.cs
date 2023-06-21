@@ -42,7 +42,7 @@ namespace StripeService
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseRouting();
             app.UseCors();
-            app.UseCors(builder => builder.WithOrigins("4.4.78.195")
+            app.UseCors(builder => builder.WithOrigins()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
 				// .SetIsOriginAllowed(origin => true)
