@@ -45,9 +45,8 @@ namespace StripeService
             app.UseCors(builder => builder.WithOrigins("4.4.78.195")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
-                // .AllowAnyOrigin()
-				.SetIsOriginAllowed(origin => true)
-				.AllowCredentials());
+				// .SetIsOriginAllowed(origin => true)
+				.AllowAnyOrigin());
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
