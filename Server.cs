@@ -41,12 +41,12 @@ namespace StripeService
 
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
             app.UseRouting();
-            // app.UseCors();
-            // app.UseCors(builder => builder.WithOrigins()
-                // .AllowAnyMethod()
-                // .AllowAnyHeader()
-				// // .SetIsOriginAllowed(origin => true)
-				// .AllowAnyOrigin());
+            app.UseCors();
+            app.UseCors(builder => builder.WithOrigins()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+				// .SetIsOriginAllowed(origin => true)
+				.AllowAnyOrigin());
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
@@ -56,6 +56,7 @@ namespace StripeService
 
 [Route("yay")]
 [ApiController]
+[DisableCors]
 public class YayController : Controller
 {
     [HttpPost]
@@ -68,6 +69,7 @@ public class YayController : Controller
 
 [Route("create-payment-intent")]
 [ApiController]
+[DisableCors]
 public class PaymentIntentApiController : Controller
 {
     [HttpPost]
