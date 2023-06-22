@@ -56,7 +56,6 @@ namespace StripeService
 
 [Route("yay")]
 [ApiController]
-[DisableCors]
 public class YayController : Controller
 {
     [HttpPost]
@@ -69,7 +68,7 @@ public class YayController : Controller
 
 [Route("create-payment-intent")]
 [ApiController]
-[DisableCors]
+[EnableCors(origins: "http://127.0.0.1:5500", headers: "*", methods: "*")]
 public class PaymentIntentApiController : Controller
 {
     [HttpPost]
